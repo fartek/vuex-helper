@@ -1,0 +1,28 @@
+{
+  "name": "vuex-helper",
+  "version": "0.0.1",
+  "description": "A cli tool to help with common vuex commands",
+  "main": "src/index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "cli",
+    "vue",
+    "vuejs",
+    "vuex",
+    "helper"
+  ],
+  "author": "Timotej Fartek",
+  "license": "MIT",
+  "devDependencies": {
+    "command-line-commands": "^2.0.0"
+  },
+  "dependencies": {
+    "colors": "^1.1.2",
+    "mkdirp": "^0.5.1"
+  }
+}
