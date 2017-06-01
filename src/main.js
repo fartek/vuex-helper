@@ -14,6 +14,7 @@ const storeDir = 'store';
 const validCommands = [null, 'init', 'add'];
 const optionDefinitions = [
   { name: 'action', alias: 'a', type: String },
+  { name: 'value', alias: 'v',}
 ];
 const options = commandLineArgs(optionDefinitions);
 
@@ -31,11 +32,7 @@ function run(command, argv) {
   if (command === 'init') {
     initCmd.run(absoluteStoreDir);
   } else if (command === 'add') {
-    // TODO: if only one of these is supplied, assume no verb is given
-    // const verb = argv[0]; // What is the action
-    const property = argv[0]; // TODO: turn these into actual arguments
-    // const mutation = utils.textToConst(utils.joinSnakeCase(verb, property));
-
-    addCmd.run(absoluteStoreDir, options.action, property);
+    const property = argv[0];
+    addCmd.run(absoluteStoreDir, property, options.value, options.action);
   }
 }

@@ -67,10 +67,15 @@ function writeFile(fileDir, data) {
   });
 }
 
+function isQuoteChar(char) {
+  return char === '\'' || char === '"';
+}
+
 module.exports = {
   textToConst,
   addNewlineToString,
   readFile,
   writeFile,
   joinSnakeCase,
+  isQuoteChar,
 };
