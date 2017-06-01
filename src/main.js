@@ -2,13 +2,15 @@ require('colors');
 const commandLineCommands = require('command-line-commands');
 const path = require('path');
 const initCmd = require('./commands/init');
+const addCmd = require('./commands/add');
+const utils = require('./utils');
 
 const executionPath = process.cwd();
 const projectRoot = executionPath;
 let projectSourceRoot = 'src';
 const storeDir = 'store';
 
-const validCommands = [ null, 'init' ]
+const validCommands = [null, 'init', 'add'];
 
 try {
   const { command, argv } = commandLineCommands(validCommands);
@@ -19,12 +21,13 @@ try {
 }
 
 function run(command, argv) {
-  console.log('command: %s', command);
-  console.log('argv:    %s', JSON.stringify(argv));
-
-
+  const absoluteStoreDir = `${projectRoot}/${projectSourceRoot}/${storeDir}`;
 
   if (command === 'init') {
-    initCmd.run(`${projectRoot}/${projectSourceRoot}/${storeDir}`);
+    initCmd.run(absoluteStoreDir);
+  } else if (command === 'add') {
+    const property = argv[0]; // TODO: turn these into actual arguments
+    const mutation = utils.textToConst(argv[1]); // -------------------
+    addCmd.run(absoluteStoreDir, property, mutation);
   }
 }

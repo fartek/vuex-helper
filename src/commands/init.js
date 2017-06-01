@@ -36,7 +36,7 @@ function createIndex(storeDir) {
 }
 
 function createMutationTypes(storeDir) {
-  return new Promise(function indexPromise(resolve, reject) {
+  return new Promise(function mutationTypesPromise(resolve, reject) {
     console.log('Creating initial mutation-types.js'.yellow);
     fs.writeFile(
       `${storeDir}/mutation-types.js`,
@@ -52,7 +52,7 @@ function createMutationTypes(storeDir) {
 }
 
 function createGetters(storeDir) {
-  return new Promise(function indexPromise(resolve, reject) {
+  return new Promise(function gettersPromise(resolve, reject) {
     console.log('Creating initial getters.js'.yellow);
     fs.writeFile(
       `${storeDir}/getters.js`,
@@ -68,7 +68,7 @@ function createGetters(storeDir) {
 }
 
 function createActions(storeDir) {
-  return new Promise(function indexPromise(resolve, reject) {
+  return new Promise(function actionPromise(resolve, reject) {
     console.log('Creating initial actions.js'.yellow);
     fs.writeFile(
       `${storeDir}/actions.js`,
@@ -84,7 +84,7 @@ function createActions(storeDir) {
 }
 
 function createMutations(storeDir) {
-  return new Promise(function indexPromise(resolve, reject) {
+  return new Promise(function mutationsPromise(resolve, reject) {
     console.log('Creating initial mutations.js'.yellow);
     fs.writeFile(
       `${storeDir}/mutations.js`,
@@ -100,7 +100,7 @@ function createMutations(storeDir) {
 }
 
 function createState(storeDir) {
-  return new Promise(function indexPromise(resolve, reject) {
+  return new Promise(function statePromise(resolve, reject) {
     console.log('Creating initial state.js'.yellow);
     fs.writeFile(
       `${storeDir}/state.js`,
